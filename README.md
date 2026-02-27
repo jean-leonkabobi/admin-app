@@ -74,12 +74,14 @@ mvn spring-boot:run
 Run -> AdminAppApplication
 
 # Déploiement avec Docker
-Construction de l'image Docker
 
-# docker build -t admin-app .
+# Construction de l'image Docker
+docker build -t admin-app .
+
+
 # Lancement avec Docker Compose
-
 docker-compose up -d
+
 # API Endpoints
 Rôles (/roles)
 Méthode	Endpoint	Description
@@ -107,7 +109,7 @@ Votre Nom
 
 Lien du projet: https://github.com/jean-leonkabobi/admin-app
 
-🙏 Remerciements
+# Remerciements
 
 Mr Ngor Seck
 
