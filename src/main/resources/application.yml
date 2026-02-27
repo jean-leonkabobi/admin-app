@@ -1,0 +1,68 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3307/${DB_NAME:adminapp-db}?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: ${DB_USERNAME:user}
+    password: ${DB_PASSWORD:user123}
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+  application:
+    name: admin-app
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        hibernate.dialect.storage_engine: innodb
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+  #modification pour le caching
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 60000
+      ssl:
+        enabled: false  # Changé de true à false pour le développement local
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,wavefront
+  info:
+    env:
+      enabled: true
+
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+  health:
+    redis:
+      enabled: true
+    probes:
+      enabled: true
+
+info:
+  application:
+    name: admin-app
+    version: '@project.version@'
+
+wavefront:
+  application:
+    name: admin-app
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+  file:
+    name: logs/logs.log

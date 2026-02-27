@@ -1,0 +1,60 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Eclipse
+.settings/
+.classpath
+.project
+bin/
+
+# VS Code
+.vscode/
+
+# Java
+*.class
+*.log
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot
+application-local.yml
+application-dev.yml
+application-prod.yml
+!application.yml
+logs/
+
+# Docker
+**/docker-compose.override.yml
+**/Dockerfile.local
+
+# Environnement
+.env
+*.pem
+*.crt
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
